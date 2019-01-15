@@ -1,0 +1,12 @@
+language: csharp
+
+solution: "./DwollaExercise/DwollaExercise.sln"
+
+before_install:
+  - sudo apt-get install nunit-console
+  
+before_script:
+  - nuget restore "./DwollaExercise/DwollaExercise.sln"
+  
+after_script:
+  - nunit-console "./DwollaExercise/DwollaExercise.Test/bin/Debug/DwollaExercise.Test.dll"
