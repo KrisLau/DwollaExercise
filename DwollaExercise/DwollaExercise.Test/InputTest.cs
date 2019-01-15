@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Threading.Tasks;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace DwollaExercise.Test
 {
-    [TestClass]
+    [TestFixture]
     public class InputTest
     {
-        [TestMethod]
+        [Test]
         public void Input_EnterRealCity_ReturnTemperature()
         {
             //Arrange
@@ -25,7 +25,7 @@ namespace DwollaExercise.Test
             Assert.AreEqual(actual, expected);
         }
 
-        [TestMethod]
+        [Test]
         public void Input_EnterFakeCity_ReturnInvalid()
         {
             string strFakeCity = "Fake Lake Citadel";
@@ -40,7 +40,7 @@ namespace DwollaExercise.Test
             Assert.AreEqual(actual, expected);
         }
 
-        [TestMethod]
+        [Test]
         public void Input_EnterNumbers_ReturnInvalid()
         {
             string strNumbers = "289243";
@@ -55,7 +55,7 @@ namespace DwollaExercise.Test
             Assert.AreEqual(actual, expected);
         }
 
-        [TestMethod]
+        [Test]
         public void Input_EnterEmpty_ReturnInvalid()
         {
             string strEmpty = "";
@@ -70,7 +70,7 @@ namespace DwollaExercise.Test
             Assert.AreEqual(actual, expected);
         }
 
-        [TestMethod]
+        [Test]
         public void Input_EnterNull_ReturnInvalid()
         {
             string expected = "Invalid city name. \n";
